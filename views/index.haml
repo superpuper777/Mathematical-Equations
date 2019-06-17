@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Mathematical equations
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/stylesheets/style.css", :rel => "stylesheet"}/
+    %meta{:charset => "utf-8"}/
+  %body
+    .jumbotron.text-center
+      %h1 Do you need help?
+      %p Choose the type of equation, enter the data and click on the button, the results will appear on the page!
+    %form#frm1
+      %p
+        %b Select the equation you want to solve:
+      %p
+        %input{:name => "equation", :type => "radio", :value => "1"}/
+        Linear
+        %br/
+        %input{:name => "equation", :type => "radio", :value => "0"}/
+        Quadratic
+        %br/
+      %p
+        Enter your equation
+        %form#myform
+      %h4
+        %span.letter a∙x + b = c
+      = succeed "x+" do
+        %input#firstterm.left{name: "first_term", maxlength: "20", size: 10, value: ""}/
+      %input#secondterm.left{name: "second_term", maxlength: "20", size: 10, value: ""}/
+      \= 0
+      %br/
+      %br/
+      %button.btn.btn-outline-primary{:type => "submit"}
+        Answer
+      %br/
+      %br/
+      %input#answer-linear.left{name: "answer_for_lin", maxlength: "25", size: 25, value: ""}/
+
+    %footer by Alena Zubritskaya
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
